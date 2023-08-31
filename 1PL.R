@@ -32,3 +32,6 @@ plot(profil_tes, type = c("IIC"), items = c(0))
 skor <- ltm::factor.scores(profil_tes) # Menampilkan skor per kelompok
 skor_lengkap <- ltm::factor.scores(profil_tes, resp.patterns = data_mentah) # Menampilkan skor per individu
 plot(skor)
+
+## Uji Unidimensional
+# unidimTest(profil_tes, data_mentah)
