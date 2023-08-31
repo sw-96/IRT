@@ -12,8 +12,8 @@ library(writexl)
 ## Membaca data input
 #data_mentah <- read.table("ouirt.dat", header = FALSE) # untuk membaca masukkan data, nama dan tipe file disesuaikan dengan kebutuhan.
 data_mentah <- read_excel(file.choose())
-nama_peserta_tes <- subset(data_mentah, select = 1) # Membuat kolom berisi nama siswa.
-data_mentah <- subset(data_mentah, select = -1) #menghilangkan kolom nama peserta tes (student)
+nama_peserta_tes <- subset(data_mentah, select = Student) # Membuat kolom berisi nama siswa.
+data_mentah <- subset(data_mentah, select = -c(Student)) #menghilangkan kolom nama peserta tes (student)
 
 
 ## Statistik deskriptif
@@ -40,13 +40,13 @@ skor_lengkap <- ltm::factor.scores(profil_tes, resp.patterns = data_mentah) # Me
 plot(skor)
 
 ## Uji Unidimensional (Jika nilai p> 0.05, maka model 1PL layak untuk digunakan)
-unidimTest(profil_tes, data_mentah)
+#unidimTest(profil_tes, data_mentah)
 
 nilai_akhir <- data.frame(skor_lengkap[["score.dat"]]) # Membuat data frame nilai akhir.
 
 # Transformasi nilai peserta tes
-nilai_terbesar_lama <- max(subset(nilai_akhir, select = 13)) # Nilai terbesar lama
-nilai_terkecil_lama <- min(subset(nilai_akhir, select = 13)) # Nilai terkecil lama
+nilai_terbesar_lama <- max(subset(nilai_akhir, select = z1)) # Nilai terbesar lama
+nilai_terkecil_lama <- min(subset(nilai_akhir, select = z1)) # Nilai terkecil lama
 
 nilai_terbesar_baru <- 500 # Bisa diatur sesuai kebutuhan
 nilai_terkecil_baru <- 100 # Bisa diatur sesuai kebutuhan
@@ -57,8 +57,8 @@ Delta_Baru <- (nilai_terbesar_baru - nilai_terkecil_baru)
 transformasi_nilai_akhir <- transform(nilai_akhir, z1 = Delta_Baru*(z1 - nilai_terkecil_lama)/Delta_Lama + nilai_terkecil_baru)
 
 
-# Menghilangkan kolom 11, 12, dan 14 dari data.frame
-transformasi_nilai_akhir <- subset(transformasi_nilai_akhir, select = -c(11, 12, 14))
+# Menghilangkan kolom Obs, Exp, dan se.z1 dari data.frame
+transformasi_nilai_akhir <- subset(transformasi_nilai_akhir, select = -c(Obs, Exp, se.z1))
 
 
 # Menggabungkan kolom nama siswa dengan pola jawaban dan skor akhirnya.
