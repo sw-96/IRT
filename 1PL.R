@@ -1,6 +1,8 @@
 ## Program 1PL IRT
 ## sara @2023
 
+## Menghitung durasi kalkulasi
+mulai <- Sys.time()
 
 ## Library
 library(ltm)
@@ -67,3 +69,6 @@ transformasi_nilai_akhir <- cbind(nama_peserta_tes, transformasi_nilai_akhir)
 
 # Expor data.frame ke format xlsx, direktori C:... diatur sesuai perangkat yang digunakan.
 write_xlsx(transformasi_nilai_akhir,"C:\\Users\\wynwi\\Desktop\\nilai_tes.xlsx")
+
+# Menghitung durasi kalkulasi
+print(Sys.time() - mulai)
