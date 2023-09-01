@@ -37,21 +37,21 @@ plot(profil_tes, type = c("IIC"))
 plot(profil_tes, type = c("IIC"), items = c(0))
 
 ## Mengestimasi kemampuan peserta tes (skor)
-skor <- ltm::factor.scores(profil_tes) # Menampilkan skor per kelompok
-skor_lengkap <- ltm::factor.scores(profil_tes, resp.patterns = data_mentah) # Menampilkan skor per individu
+skor <- ltm::factor.scores(profil_tes) # menampilkan skor per kelompok
+skor_lengkap <- ltm::factor.scores(profil_tes, resp.patterns = data_mentah) # menampilkan skor per individu
 plot(skor)
 
-## Uji Unidimensional (Jika nilai p> 0.05, maka model 1PL layak untuk digunakan)
+## Uji Unidimensional (Jika nilai p > 0.05, maka model 1PL layak untuk digunakan)
 #unidimTest(profil_tes, data_mentah)
 
-nilai_akhir <- data.frame(skor_lengkap[["score.dat"]]) # Membuat data frame nilai akhir.
+nilai_akhir <- data.frame(skor_lengkap[["score.dat"]]) # membuat data frame nilai akhir.
 
 # Transformasi nilai peserta tes
-nilai_terbesar_lama <- max(subset(nilai_akhir, select = z1)) # Nilai terbesar lama
-nilai_terkecil_lama <- min(subset(nilai_akhir, select = z1)) # Nilai terkecil lama
+nilai_terbesar_lama <- max(subset(nilai_akhir, select = z1)) # nilai terbesar lama
+nilai_terkecil_lama <- min(subset(nilai_akhir, select = z1)) # nilai terkecil lama
 
-nilai_terbesar_baru <- 500 # Bisa diatur sesuai kebutuhan
-nilai_terkecil_baru <- 100 # Bisa diatur sesuai kebutuhan
+nilai_terbesar_baru <- 500 # bisa diatur sesuai kebutuhan
+nilai_terkecil_baru <- 100 # bisa diatur sesuai kebutuhan
 
 Delta_Lama <- (nilai_terbesar_lama - nilai_terkecil_lama)
 Delta_Baru <- (nilai_terbesar_baru - nilai_terkecil_baru)
@@ -67,8 +67,8 @@ transformasi_nilai_akhir <- subset(transformasi_nilai_akhir, select = -c(Obs, Ex
 transformasi_nilai_akhir <- cbind(nama_peserta_tes, transformasi_nilai_akhir) 
 
 
-# Expor data.frame ke format xlsx, direktori C:... diatur sesuai perangkat yang digunakan.
-write_xlsx(transformasi_nilai_akhir,"C:\\Users\\wynwi\\Desktop\\nilai_tes.xlsx")
+# Ekspor data.frame ke format xlsx, direktori C:... diatur sesuai perangkat yang digunakan.
+write_xlsx(transformasi_nilai_akhir,"C:\\Users\\wynwi\\Desktop\\nilai_tes_1PL.xlsx")
 
 # Menghitung durasi kalkulasi
 print(Sys.time() - mulai)
