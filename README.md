@@ -21,4 +21,13 @@ Solusi: Session --> Set Working Directory --> To Source File Location
 Pastikan skrip kode dalam satu folder dengan file yang hendak diinput.
 
 
+Problem:
+Error in solve.default(object$hessian) : 
+  system is computationally singular: reciprocal condition number = 1.07419e-39
+
+Penjelasan: https://community.rstudio.com/t/error-in-solve-default-object-hessian-system-is-computationally-singular-reciprocal-condition-number-2-53258e-20/100585
+
+Solusi: ???
+
+
 

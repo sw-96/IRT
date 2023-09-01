@@ -21,7 +21,7 @@ data_mentah <- subset(data_mentah, select = -c(Student)) #menghilangkan kolom na
 data_deskriptif <- data.frame(describe(data_mentah)) # membuat data frame yang berisi data-data hasil pengolahan statistik deskriptif.
 
 ## Mengestimasi profi soal (tingkat kesulitan, daya beda, tebakan semu) menggunakan 3PL-IRT
-profil_tes <- tpm(data_mentah)
+profil_tes <- tpm(data_mentah, IRT.param = TRUE)
 summary(profil_tes)
 
 par(mfrow = c(2, 2)) # layout tabel
@@ -41,7 +41,7 @@ skor_lengkap <- ltm::factor.scores(profil_tes, resp.patterns = data_mentah) # me
 plot(skor)
 
 ## Uji Unidimensional (Jika nilai p > 0.05, maka model 3PL layak untuk digunakan)
-unidimTest(profil_tes, data_mentah)
+#unidimTest(profil_tes, data_mentah)
 
 nilai_akhir <- data.frame(skor_lengkap[["score.dat"]]) # membuat data frame nilai akhir.
 
