@@ -40,7 +40,7 @@ skor_lengkap <- ltm::factor.scores(profil_tes, resp.patterns = data_mentah) # me
 plot(skor)
 
 ## Uji Unidimensional (Jika nilai p > 0.05, maka model 2PL layak untuk digunakan)
-unidimTest(profil_tes, data_mentah)
+#unidimTest(profil_tes, data_mentah)
 
 nilai_akhir <- data.frame(skor_lengkap[["score.dat"]]) # membuat data frame nilai akhir.
 
