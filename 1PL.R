@@ -14,7 +14,7 @@ library(writexl)
 ## Membaca data input
 #data_mentah <- read.table("ouirt.dat", header = FALSE) # untuk membaca masukkan data, nama dan tipe file disesuaikan dengan kebutuhan.
 data_mentah <- read_excel(file.choose())
-nama_peserta_tes <- subset(data_mentah, select = Student) # Membuat kolom berisi nama siswa.
+nama_peserta_tes <- subset(data_mentah, select = Student) # membuat kolom berisi nama siswa.
 data_mentah <- subset(data_mentah, select = -c(Student)) #menghilangkan kolom nama peserta tes (student)
 
 
