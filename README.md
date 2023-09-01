@@ -3,7 +3,7 @@
 
 
 # Penggunaan
-Untuk melihat profil tiap soal dan hasil uji unidimensional, tempatkan kursor di akhir baris kode yang diawali dengan "summmary(...)", selanjutnya  pilih run the current line
+Untuk melihat profil tiap soal dan hasil uji unidimensional, tempatkan kursor di akhir baris kode yang diawali dengan "summmary(...)" atau "unidimTest(...)", selanjutnya  pilih run the current line
 
 
 # Error yang sering terjadi
