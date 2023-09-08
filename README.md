@@ -2,7 +2,7 @@
  Skrip kode untuk menghitung atau mengestimasi profil soal dan kemampuan peserta tes berdasarkan teori respon butir
 
 # Untuk mirt_based_IRT_program
-## Program ini dibuat untuk menghasilkan output atau keluaran yang komprehensif, seperti profil soal dan profil peserta tes
+Program ini dibuat untuk menghasilkan output atau keluaran yang komprehensif, seperti profil soal dan profil peserta tes
 ## Referensi:
 - https://cran.r-project.org/web/packages/mirt/mirt.pdf
 - https://rpubs.com/rochaya/889512
@@ -42,6 +42,9 @@ Penjelasan: https://community.rstudio.com/t/error-in-solve-default-object-hessia
 
 Solusi: ??? Menggunakan library mirt (mirt_based_IRT_program)
 
+# Kenapa memakai Rstudio (library mirt)?
+- Karena library(ltm, irtoys) tidak dapat menangani data yang besar (sebagai contoh, jawaban 30 soal dari 500 orang siswa)
+- Karena jMetrik tidak memberikan support atau menyediakan fitur untuk menghitung dan menampilkan nilai AIC dan BIC yang nantinya digunakan sebagai pedoman dalam pemilihan model.
 
 
 
