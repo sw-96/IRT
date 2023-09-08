@@ -20,7 +20,7 @@ Untuk melihat profil tiap soal dan hasil uji unidimensional, tempatkan kursor di
 
 
 ## Error yang sering terjadi
-Problem:
+- Problem:
 Error in exists(cacheKey, where = .rs.WorkingDataEnv, inherits = FALSE) : 
   invalid first argument
 
