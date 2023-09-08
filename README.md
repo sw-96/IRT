@@ -1,12 +1,25 @@
 # IRT
  Skrip kode untuk menghitung atau mengestimasi profil soal dan kemampuan peserta tes berdasarkan teori respon butir
 
+# Untuk mirt_based_IRT_program
+## Program ini dibuat untuk menghasilkan output atau keluaran yang komprehensif, seperti profil soal dan profil peserta tes
+## Referensi:
+- https://cran.r-project.org/web/packages/mirt/mirt.pdf
+- https://rpubs.com/rochaya/889512
+- https://rpubs.com/Mubarak/863076
+- https://philippmasur.de/2022/05/13/how-to-run-irt-analyses-in-r/
 
-# Penggunaan
+
+# Untuk 1PL, 2PL, 3PL
+## Referensi
+- https://quantdev.ssri.psu.edu/sites/qdev/files/IRT_tutorial_FA17_2.html#parameter-logistic-irt-model
+
+
+## Penggunaan 
 Untuk melihat profil tiap soal dan hasil uji unidimensional, tempatkan kursor di akhir baris kode yang diawali dengan "summmary(...)" atau "unidimTest(...)", selanjutnya  pilih run the current line
 
 
-# Error yang sering terjadi
+## Error yang sering terjadi
 Problem:
 Error in exists(cacheKey, where = .rs.WorkingDataEnv, inherits = FALSE) : 
   invalid first argument
@@ -27,7 +40,9 @@ Error in solve.default(object$hessian) :
 
 Penjelasan: https://community.rstudio.com/t/error-in-solve-default-object-hessian-system-is-computationally-singular-reciprocal-condition-number-2-53258e-20/100585
 
-Solusi: ???
+Solusi: ??? Menggunakan library mirt (mirt_based_IRT_program)
+
+
 
 
 
