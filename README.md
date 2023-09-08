@@ -1,7 +1,7 @@
 # IRT
  Skrip kode untuk menghitung atau mengestimasi profil soal dan kemampuan peserta tes berdasarkan teori respon butir
 
-# Untuk mirt_based_IRT_program
+# Untuk mirt_based_IRT_program (direkomendasikan)
 Program ini dibuat untuk menghasilkan output atau keluaran yang komprehensif, seperti profil soal dan profil peserta tes
 ## Referensi:
 - https://cran.r-project.org/web/packages/mirt/mirt.pdf
