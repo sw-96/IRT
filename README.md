@@ -46,6 +46,9 @@ Solusi: ??? Menggunakan library mirt (mirt_based_IRT_program)
 - Karena library(ltm, irtoys) tidak dapat menangani data yang besar (sebagai contoh, jawaban 30 soal dari 500 orang siswa)
 - Karena jMetrik tidak memberikan support atau menyediakan fitur untuk menghitung dan menampilkan nilai AIC dan BIC yang nantinya digunakan sebagai pedoman dalam pemilihan model.
 
+# Apakah pemilihan model dan aplikasi memengaruhi informasi yang diperoleh?
+Ia, namun trend dari informasi yang diperoleh hampir sama. Lebih lanjtu bisa membaca referensi ini: https://assess.com/docs/Which_IRT_Software.pdf
+
 
 
 
