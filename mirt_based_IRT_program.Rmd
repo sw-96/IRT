@@ -1,0 +1,140 @@
+---
+title: "IRT Analysis Using MIRT"
+output:
+  html_document:
+    df_print: paged
+  pdf_document: default
+---
+
+```{r}
+# (c) Windoe Sara 2023
+
+## Menghitung durasi kalkulasi
+mulai <- Sys.time()
+
+## Library
+library(mirt)
+library(ggmirt)
+library(psych)
+library(readxl)
+library(writexl)
+
+## Transformasi skor siswa
+nilai_terbesar_baru <- 500 # bisa diatur sesuai kebutuhan
+nilai_terkecil_baru <- 100 # bisa diatur sesuai kebutuhan
+
+
+delta_baru <- (nilai_terbesar_baru - nilai_terkecil_baru)
+
+```
+# Membaca File
+
+```{r}
+## Membaca data input
+data_mentah <- read_excel(file.choose())
+nama_peserta_tes <- subset(data_mentah, select = Student) # Membuat kolom berisi nama siswa.
+data_mentah <- subset(data_mentah, select = -c(Student)) # Menghilangkan kolom nama peserta (Students).
+
+```
+
+```{r}
+## Statistik Deskriptif
+data_deskriptif <- data.frame(describe(data_mentah)) # Membuat dataframe yang berisi data-data hasil pengolahan statistik deskriptif.
+```
+
+```{r}
+## Uji Menggunakan Model 1PL
+profil_tes_1PL <- mirt(data_mentah, 1, itemtype = 'Rasch') 
+coef(profil_tes_1PL, simplify = TRUE)
+
+df_profil_tes_1P <- data.frame(coef(profil_tes_1PL, simplify = TRUE))/1.7 # Pembagian dengan 1.7 dilakukan untuk memperoleh nilai b
+
+plot(profil_tes_1PL, type = 'trace') # Mencetak ICC tiap butir soal
+itemInfoPlot(profil_tes_1PL, facet = TRUE) # Mencetak IIC tiap butir soal
+plot(profil_tes_1PL, type = 'info') # Mencetak kurva informasi tes
+#plot(profil_tes_1PL) # Mencetak expected total score
+
+skor_1PL <- fscores(profil_tes_1PL, method = 'EAP') #Mengekstrak nilai dari setiap siswa
+
+df_skor_1PL <- data.frame(skor_1PL)/1.7 # Pembagian dengan 1.7 dilakukan untuk memperoleh nilai theta.
+
+nilai_terbesar_lama_1PL <- max(df_skor_1PL) # Nilai terbesar siswa
+nilai_terkecil_lama_1PL <- min(df_skor_1PL) # Nilai terkecil siswa
+
+delta_lama_1PL <- (nilai_terbesar_lama_1PL - nilai_terkecil_lama_1PL)
+
+df_skor_1PL_transformasi <- transform(df_skor_1PL, F1 = delta_baru*(F1 - nilai_terkecil_lama_1PL)/delta_lama_1PL + nilai_terkecil_baru) # Konversi ke skor baru.
+
+df_skor_1PL_transformasi <- cbind(nama_peserta_tes, df_skor_1PL_transformasi) # Menggabungkan kolom nama siswa dengan skor siswa yang sudah terkonversi.
+
+write_xlsx(df_skor_1PL_transformasi, "C:\\Users\\wynwi\\Desktop\\nilai_tes_1PL.xlsx") # Ekspor ke file excel
+
+```
+
+
+```{r}
+## Uji Menggunakan Model 2PL
+profil_tes_2PL <- mirt(data_mentah, 1, itemtype = '2PL')
+coef(profil_tes_2PL, simplify = TRUE)
+
+df_profil_tes_2P <- data.frame(coef(profil_tes_2PL, simplify = TRUE)) # Membuat dataframe untuk profil butir soal
+
+plot(profil_tes_2PL, type = 'trace') # Mencetak ICC tiap butir soal
+itemInfoPlot(profil_tes_2PL, facet = TRUE) # Mencetak IIC tiap butir soal
+plot(profil_tes_2PL, type = 'info') # Mencetak kurva informasi tes
+#plot(profil_tes_2PL) # Mencetak expected total score
+
+skor_2PL <- fscores(profil_tes_2PL, method = 'EAP') # Mengekstrak nilai dari setiap siswa
+
+df_skor_2PL <- data.frame(skor_2PL) # Membuat dataframe skor
+
+nilai_terbesar_lama_2PL <- max(df_skor_2PL) # Nilai terbesar siswa
+nilai_terkecil_lama_2PL <- min(df_skor_2PL) # Nilai terkecil siswa
+
+delta_lama_2PL <- (nilai_terbesar_lama_2PL - nilai_terkecil_lama_2PL)
+
+df_skor_2PL_transformasi <- transform(df_skor_2PL, F1 = delta_baru*(F1 - nilai_terkecil_lama_2PL)/delta_lama_2PL + nilai_terkecil_baru) # Konversi ke skor baru.
+
+df_skor_2PL_transformasi <- cbind(nama_peserta_tes, df_skor_2PL_transformasi) # Menggabungkan kolom nama siswa dengan skor siswa yang sudah terkonversi.
+
+write_xlsx(df_skor_2PL_transformasi, "C:\\Users\\wynwi\\Desktop\\nilai_tes_2PL.xlsx") # Ekspor ke file excel
+
+```
+
+```{r}
+## Uji Menggunakan Model 3PL
+profil_tes_3PL <- mirt(data_mentah, 1, itemtype = '3PL')
+coef(profil_tes_3PL, simplify = TRUE)
+df_profil_tes_3P <- data.frame(coef(profil_tes_3PL, simplify = TRUE)) # Membuat dataframe untuk profil soal
+
+plot(profil_tes_3PL, type = 'trace') # Mencetak Icc tiap butir soal
+itemInfoPlot(profil_tes_3PL, facet = TRUE) # Mencetak IIC tiap butir soal
+plot(profil_tes_3PL, type = 'info') # Mencetak kurva informasi tes
+#plot(profil_tes_3PL) # Mencetak expected total score
+
+skor_3PL <- fscores(profil_tes_3PL, method = 'EAP') # Mengekstrak nilai dari setiap siswa
+
+df_skor_3PL <- data.frame(skor_3PL) # Membuat dataframe skor
+
+nilai_terbesar_lama_3PL <- max(df_skor_3PL) # Nilai terbesar siswa
+nilai_terkecil_lama_3PL <- min(df_skor_3PL) # Nilai terkecil siswa
+
+delta_lama_3PL <- (nilai_terbesar_lama_3PL - nilai_terkecil_lama_3PL)
+
+df_skor_3PL_transformasi <- transform(df_skor_3PL, F1 = delta_baru*(F1 - nilai_terkecil_lama_3PL)/delta_lama_3PL + nilai_terkecil_baru) # Konversi ke skor baru.
+
+df_skor_3PL_transformasi <- cbind(nama_peserta_tes, df_skor_3PL_transformasi) # Menggabungkan kolom nama siswa dengan skor siswa yang sudah terkonversi.
+
+write_xlsx(df_skor_3PL_transformasi, "C:\\Users\\wynwi\\Desktop\\nilai_tes_3PL.xlsx") # Ekspor ke file excel
+
+```
+
+```{r}
+# Tes Anova untuk mencari nilai AIC & BIC
+anova(profil_tes_1PL, profil_tes_2PL, profil_tes_3PL)
+
+# Model yang digunakan adalah model yang nilai AIC-nya paling kecil.
+
+print(Sys.time() - mulai) # Mencetak durasi kalkulasi
+```
+
