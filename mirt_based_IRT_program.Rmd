@@ -20,7 +20,7 @@ library(readxl)
 library(writexl)
 
 ## Nama file keluaran
-#File keluarannya ditempatkan di desktop
+#File keluarannya ditempatkan di desktop; Bisa diatur sesuai kebutuhan
 Nama_sub_tes <- "PU" #PU, PPU, PBM, PK, LBI, LBE, PM
 
 ## Transformasi skor siswa
