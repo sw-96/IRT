@@ -4,7 +4,7 @@ Skrip kode untuk menghitung atau mengestimasi profil soal dan kemampuan peserta 
  ---
 
 ## 1. [mirt_based_IRT_program.Rmd](https://github.com/sw-96/IRT/blob/05f3a477a84f45ffcdd9ce7f95d57820b4f45c67/mirt_based_IRT_program.Rmd)
-Program ini dibuat untuk menghasilkan output atau keluaran yang komprehensif, seperti profil soal dan profil peserta tes
+Program ini dibuat untuk menghasilkan output atau keluaran yang komprehensif, seperti profil soal dan profil peserta tes.
 #### Referensi:
 - https://cran.r-project.org/web/packages/mirt/mirt.pdf
 - https://rpubs.com/rochaya/889512
@@ -15,7 +15,7 @@ Program ini dibuat untuk menghasilkan output atau keluaran yang komprehensif, se
 Pengaplikasiaan [mirt_based_IRT_program.Rmd](https://github.com/sw-96/IRT/blob/05f3a477a84f45ffcdd9ce7f95d57820b4f45c67/mirt_based_IRT_program.Rmd) dapat dilakukan dengan mengikuti langkah-langkah yang digambarkan pada [flowchart.png](https://github.com/sw-96/IRT/blob/05f3a477a84f45ffcdd9ce7f95d57820b4f45c67/flowchart.png).
 
 ## 3. Data Jawaban Siswa
-Data jawaban yang dapat digunakan dalam simulasi analisis IRT tersedia pada file [full_dummy_data.xlsx](https://github.com/sw-96/IRT/blob/05f3a477a84f45ffcdd9ce7f95d57820b4f45c67/full_dummy_data.xlsx)
+Data jawaban yang dapat digunakan dalam simulasi analisis IRT tersedia pada file [full_dummy_data.xlsx](https://github.com/sw-96/IRT/blob/05f3a477a84f45ffcdd9ce7f95d57820b4f45c67/full_dummy_data.xlsx) (500 siswa) & [small_dummy_data](https://github.com/sw-96/IRT/blob/219f09a3aa2fdd2c39643b7e7fcd7534d51486d6/small_dummy_data.xlsx) (5 siswa).
 
 ## 4. Referensi untuk Pemilahan Butir Soal
 Setiap soal memiliki karakterisitik tersendiri dan bersifat khas, yang membedakannya dari soal yang lain. Karakteristik atau profil dari soal dapat diwakilkan oleh parameter-parameter yang terlibat pada penggunaan model 1PL, 2PL, dan 3PL dalam analisis IRT. 
@@ -57,15 +57,15 @@ Solusi: ??? Menggunakan library mirt (mirt_based_IRT_program)
 
 
 ## Penggunaan 
-Untuk melihat profil tiap soal dan hasil uji unidimensional, tempatkan kursor di akhir baris kode yang diawali dengan "summmary(...)" atau "unidimTest(...)", selanjutnya  pilih run the current line
+Untuk melihat profil tiap soal dan hasil uji unidimensional, tempatkan kursor di akhir baris kode yang diawali dengan "summmary(...)" atau "unidimTest(...)", selanjutnya  pilih _run the current line_.
 
 
 ## Kenapa memakai Rstudio (library mirt)?
-- Karena library(ltm, irtoys) tidak dapat menangani data yang besar (sebagai contoh, jawaban 30 soal dari 500 orang siswa)
+- Karena _library(ltm, irtoys)_ tidak dapat menangani data yang besar (sebagai contoh, jawaban 30 soal dari 500 orang siswa).
 - Karena jMetrik tidak memberikan support atau menyediakan fitur untuk menghitung dan menampilkan nilai AIC dan BIC yang nantinya digunakan sebagai pedoman dalam pemilihan model.
 
 ## Apakah pemilihan model dan aplikasi memengaruhi informasi yang diperoleh?
-Ia, namun trend dari informasi yang diperoleh hampir sama. Lebih lanjut bisa membaca referensi ini: https://assess.com/docs/Which_IRT_Software.pdf
+Ia, namun trend dari informasi yang diperoleh hampir sama. Lebih lanjut bisa membaca referensi ini: https://assess.com/docs/Which_IRT_Software.pdf.
 
 ## Error yang mungkin terjadi
 
