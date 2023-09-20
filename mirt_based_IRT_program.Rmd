@@ -21,7 +21,7 @@ library(writexl)
 
 ## Nama file keluaran
 #File keluarannya ditempatkan di desktop; Bisa diatur sesuai kebutuhan
-Nama_sub_tes <- "PU" #PU, PPU, PBM, PK, LBI, LBE, PM
+Nama_sub_tes <- "PM" #PU, PPU, PBM, PK, LBI, LBE, PM
 
 ## Transformasi skor siswa
 nilai_terbesar_baru <- 500 # bisa diatur sesuai kebutuhan
