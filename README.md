@@ -26,13 +26,13 @@ Untuk mempermudahkan analisis, parameter tebakan semu dapat digunakan sebagai ac
 
 
 ## 5. Simulasi menggunakan data yang ukurannya kecil
-Analisi nilai dari $<10$ siswa dilakukan menggunakan data buatan small_dummy_data. Perlu dilakukan penyesuaian lebih lanjut pada data mentah yang dianalisis menggunakan IRT. Berdasarkan percobaan awal, didapati bahwa Soal_1, Soal_10, Soal_11, Soal_20, Soal_21, Soal_30 tidak dapat dianalisis menggunakan IRT karena respon siswa sebagai peserta tes bersifat homogen (semua 0 atau semua 1). Oleh karena itu, diterapkan baris kode di bawah:
+Analisis nilai dari $<10$ siswa dilakukan menggunakan data buatan [small_dummy_data](https://github.com/sw-96/IRT/blob/219f09a3aa2fdd2c39643b7e7fcd7534d51486d6/small_dummy_data.xlsx). Perlu dilakukan penyesuaian lebih lanjut pada data mentah yang dianalisis menggunakan IRT. Berdasarkan percobaan awal, didapati bahwa Soal_1, Soal_10, Soal_11, Soal_20, Soal_21, Soal_30 tidak dapat dianalisis menggunakan IRT karena respon siswa sebagai peserta tes bersifat homogen (semua 0 atau semua 1). Oleh karena itu, diterapkan baris kode di bawah:
 ```
 data_mentah <- subset(data_mentah, select = -c(No, Nama_Siswa, Asal_Sekolah, Soal_1, Soal_10, Soal_11, Soal_20, Soal_21, Soal_30, Total_Benar, Total_Salah))
 ```
 untuk menghilangkan Soal_1, Soal_10, Soal_11, Soal_20, Soal_21, Soal_30 dari data yang akan dianalisis menggunakan IRT.
 
-Sekilas, hasil yang diperoleh dari analisis data yang ukurannya kecil sejalan dengan jumlah jawaban benar yang dijawab oleh siswa. Oleh karena itu, mirt_based_IRT_program.Rmd masih layak untuk digunakan.
+Sekilas, hasil yang diperoleh dari analisis data yang ukurannya kecil sejalan dengan jumlah jawaban benar yang dijawab oleh siswa. Oleh karena itu, [mirt_based_IRT_program.Rmd](https://github.com/sw-96/IRT/blob/219f09a3aa2fdd2c39643b7e7fcd7534d51486d6/mirt_based_IRT_program.Rmd) masih layak untuk digunakan.
 
 ---
 
