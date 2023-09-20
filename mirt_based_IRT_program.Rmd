@@ -33,7 +33,9 @@ delta_baru <- (nilai_terbesar_baru - nilai_terkecil_baru)
 ## Membaca data input
 data_mentah <- read_excel(file.choose())
 nama_peserta_tes <- subset(data_mentah, select = c(No, Nama_Siswa, Asal_Sekolah)) # Membuat kolom berisi nama siswa dan asal sekolah.
-data_mentah <- subset(data_mentah, select = -c(No, Nama_Siswa, Asal_Sekolah, Total_Benar, Total_Salah)) # Menghilangkan kolom nama peserta (Students).
+data_mentah <- subset(data_mentah, select = -c(No, Nama_Siswa, Asal_Sekolah, Total_Benar, Total_Salah)) # Menghilangkan kolom nama peserta (Students) dan soal.
+
+#data_mentah <- subset(data_mentah, select = -c(No, Nama_Siswa, Asal_Sekolah, Soal_1, Soal_10, Soal_11, Soal_20, Soal_21, Soal_30, Total_Benar, Total_Salah)) # Menghilangkan kolom nama peserta (Students) dan soal.
 
 ```
 
