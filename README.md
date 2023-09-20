@@ -57,7 +57,7 @@ Solusi: ??? Menggunakan library mirt (mirt_based_IRT_program)
 
 
 ## Penggunaan 
-Untuk melihat profil tiap soal dan hasil uji unidimensional, tempatkan kursor di akhir baris kode yang diawali dengan "summmary(...)" atau "unidimTest(...)", selanjutnya  pilih _run the current line_.
+Untuk melihat profil tiap soal dan hasil uji unidimensional, tempatkan kursor di akhir baris kode yang diawali dengan "summary(...)" atau "unidimTest(...)", selanjutnya  pilih _run the current line_.
 
 
 ## Kenapa memakai Rstudio (library mirt)?
