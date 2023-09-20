@@ -25,6 +25,15 @@ Pemilihan soal-soal yang dapat digunakan dalam penilaian atau asesmen tertentu d
 Untuk mempermudahkan analisis, parameter tebakan semu dapat digunakan sebagai acuan utama dalam memilah soal yang akan dipakai dalam prose penilaian atau asesmen. Misalkan pada sebuah soal tersedia pilihan jawaban sebanyak $n$ buah, maka soal-soal dengan nilai parameter tebakan semu $\geq \frac{1}{n}$ sebaiknya dihindari dan dihilangkan dari database yang akan digunakan untuk analisis nilai atau skor siswa. Cara tersebut diacu dari [sumber ini](https://rpubs.com/rochaya/889512).
 
 
+## 5. Simulasi menggunakan data yang ukurannya kecil
+Analisi nilai dari $<10$ siswa dilakukan menggunakan data buatan small_dummy_data. Perlu dilakukan penyesuaian lebih lanjut pada data mentah yang dianalisis menggunakan IRT. Berdasarkan percobaan awal, didapati bahwa Soal_1, Soal_10, Soal_11, Soal_20, Soal_21, Soal_30 tidak dapat dianalisis menggunakan IRT karena respon siswa sebagai peserta tes bersifat homogen (semua 0 atau semua 1). Oleh karena itu, diterapkan baris kode di bawah:
+```
+data_mentah <- subset(data_mentah, select = -c(No, Nama_Siswa, Asal_Sekolah, Soal_1, Soal_10, Soal_11, Soal_20, Soal_21, Soal_30, Total_Benar, Total_Salah))
+```
+untuk menghilangkan Soal_1, Soal_10, Soal_11, Soal_20, Soal_21, Soal_30 dari data yang akan dianalisis menggunakan IRT.
+
+Sekilas, hasil yang diperoleh dari analisis data yang ukurannya kecil sejalan dengan jumlah jawaban benar yang dijawab oleh siswa. Oleh karena itu, mirt_based_IRT_program.Rmd masih layak untuk digunakan.
+
 ---
 
 ## _For Exploration: Untuk 1PL, 2PL, 3PL_
@@ -77,9 +86,6 @@ Tidak menemukan file yang akan diinput
 Solusi: Session --> Set Working Directory --> To Source File Location
 Pastikan skrip kode dalam satu folder dengan file yang hendak diinput.
 ```
-
-
-
 
 
 
