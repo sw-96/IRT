@@ -19,6 +19,10 @@ library(psych)
 library(readxl)
 library(writexl)
 
+## Nama file keluaran
+#File keluarannya ditempatkan di desktop
+Nama_sub_tes <- "PU" #PU, PPU, PBM, PK, LBI, LBE, PM
+
 ## Transformasi skor siswa
 nilai_terbesar_baru <- 500 # bisa diatur sesuai kebutuhan
 nilai_terkecil_baru <- 100 # bisa diatur sesuai kebutuhan
@@ -69,7 +73,9 @@ df_skor_1PL_transformasi <- transform(df_skor_1PL, F1 = delta_baru*(F1 - nilai_t
 
 df_skor_1PL_transformasi <- cbind(nama_peserta_tes, df_skor_1PL_transformasi) # Menggabungkan kolom nama siswa dengan skor siswa yang sudah terkonversi.
 
-write_xlsx(df_skor_1PL_transformasi, "C:\\Users\\wynwi\\Desktop\\nilai_tes_1PL.xlsx") # Ekspor ke file excel
+#write_xlsx(df_skor_1PL_transformasi, "C:\\Users\\wynwi\\Desktop\\nilai_tes_1PL.xlsx") # Ekspor file excel ke direktori users\wynwi\...
+
+write_xlsx(df_skor_1PL_transformasi, paste("Skor", Nama_sub_tes, "1PL.xlsx",sep="_")) # Ekspor file excel ke directori yang sama dengan mirt_based_IRT_program
 
 ```
 
@@ -99,7 +105,9 @@ df_skor_2PL_transformasi <- transform(df_skor_2PL, F1 = delta_baru*(F1 - nilai_t
 
 df_skor_2PL_transformasi <- cbind(nama_peserta_tes, df_skor_2PL_transformasi) # Menggabungkan kolom nama siswa dengan skor siswa yang sudah terkonversi.
 
-write_xlsx(df_skor_2PL_transformasi, "C:\\Users\\wynwi\\Desktop\\nilai_tes_2PL.xlsx") # Ekspor ke file excel
+#write_xlsx(df_skor_2PL_transformasi, "C:\\Users\\wynwi\\Desktop\\nilai_tes_2PL.xlsx") # Ekspor ke file excel
+
+write_xlsx(df_skor_2PL_transformasi, paste("Skor", Nama_sub_tes, "2PL.xlsx",sep="_")) # Ekspor file excel ke directori yang sama dengan mirt_based_IRT_program
 
 ```
 
@@ -127,7 +135,9 @@ df_skor_3PL_transformasi <- transform(df_skor_3PL, F1 = delta_baru*(F1 - nilai_t
 
 df_skor_3PL_transformasi <- cbind(nama_peserta_tes, df_skor_3PL_transformasi) # Menggabungkan kolom nama siswa dengan skor siswa yang sudah terkonversi.
 
-write_xlsx(df_skor_3PL_transformasi, "C:\\Users\\wynwi\\Desktop\\nilai_tes_3PL.xlsx") # Ekspor ke file excel
+#write_xlsx(df_skor_3PL_transformasi, "C:\\Users\\wynwi\\Desktop\\nilai_tes_3PL.xlsx") # Ekspor ke file excel
+
+write_xlsx(df_skor_3PL_transformasi, paste("Skor", Nama_sub_tes, "3PL.xlsx",sep="_")) # Ekspor file excel ke directori yang sama dengan mirt_based_IRT_program
 
 ```
 
