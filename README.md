@@ -32,12 +32,12 @@ data_mentah <- subset(data_mentah, select = -c(No, Nama_Siswa, Asal_Sekolah, Soa
 ```
 untuk menghilangkan Soal_1, Soal_10, Soal_11, Soal_20, Soal_21, Soal_30 dari data yang akan dianalisis menggunakan IRT.
 
-Sekilas, hasil yang diperoleh dari analisis data yang ukurannya kecil sejalan dengan jumlah jawaban benar yang dijawab oleh siswa. Oleh karena itu, [mirt_based_IRT_program.Rmd](https://github.com/sw-96/IRT/blob/219f09a3aa2fdd2c39643b7e7fcd7534d51486d6/mirt_based_IRT_program.Rmd) masih layak untuk digunakan.
+Sekilas, hasil yang diperoleh dari analisis data yang ukurannya kecil bersesuaian dengan jumlah jawaban benar yang dijawab oleh siswa. Oleh karena itu, [mirt_based_IRT_program.Rmd](https://github.com/sw-96/IRT/blob/219f09a3aa2fdd2c39643b7e7fcd7534d51486d6/mirt_based_IRT_program.Rmd) masih layak untuk digunakan.
 
 ---
 
 ## _For Exploration: Untuk 1PL, 2PL, 3PL_
-Skrip R dari 1PL, 2PL, 3PL ini terdapat pada folder [Various library](https://github.com/sw-96/IRT/tree/05f3a477a84f45ffcdd9ce7f95d57820b4f45c67/Various%20library). Skrip ini merupakan protipe kode yang digunakan dalam penyusunan [mirt_based_IRT_program.Rmd](https://github.com/sw-96/IRT/blob/05f3a477a84f45ffcdd9ce7f95d57820b4f45c67/mirt_based_IRT_program.Rmd).
+Skrip R dari 1PL, 2PL, 3PL ini terdapat pada folder [Various library](https://github.com/sw-96/IRT/tree/05f3a477a84f45ffcdd9ce7f95d57820b4f45c67/Various%20library). Skrip ini merupakan prototipe kode yang digunakan dalam penyusunan [mirt_based_IRT_program.Rmd](https://github.com/sw-96/IRT/blob/05f3a477a84f45ffcdd9ce7f95d57820b4f45c67/mirt_based_IRT_program.Rmd).
 
 Penggunaan dari 3PL pada yang terdapat pada [Various library](https://github.com/sw-96/IRT/tree/05f3a477a84f45ffcdd9ce7f95d57820b4f45c67/Various%20library) mungkin saja menghasilkan _error_ seperti berikut:
 ```
