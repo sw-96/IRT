@@ -50,7 +50,10 @@ data_deskriptif <- data.frame(describe(data_mentah)) # Membuat dataframe yang be
 
 ```{r}
 ## Uji Menggunakan Model 1PL
-profil_tes_1PL <- mirt(data_mentah, 1, itemtype = 'Rasch') 
+profil_tes_1PL <- mirt(data_mentah, 1, itemtype = 'Rasch')
+
+#profil_tes_1PL <- mirt(data_mentah, 1, itemtype = 'Rasch', technical = list(NCYCLES = 5000)) #Aktifkan baris kode ini jika iterasinya terterminate di 500.
+
 coef(profil_tes_1PL, simplify = TRUE)
 
 df_profil_tes_1P <- data.frame(coef(profil_tes_1PL, simplify = TRUE))/1.7 # Pembagian dengan 1.7 dilakukan untuk memperoleh nilai b
@@ -83,6 +86,10 @@ write_xlsx(df_skor_1PL_transformasi, paste("Skor", Nama_sub_tes, "1PL.xlsx",sep=
 ```{r}
 ## Uji Menggunakan Model 2PL
 profil_tes_2PL <- mirt(data_mentah, 1, itemtype = '2PL')
+
+#profil_tes_2PL <- mirt(data_mentah, 1, itemtype = '2PL', technical = list(NCYCLES = 5000)) #Aktifkan baris kode ini jika iterasinya terterminate di 500.
+
+
 coef(profil_tes_2PL, simplify = TRUE)
 
 df_profil_tes_2P <- data.frame(coef(profil_tes_2PL, simplify = TRUE)) # Membuat dataframe untuk profil butir soal
@@ -114,6 +121,10 @@ write_xlsx(df_skor_2PL_transformasi, paste("Skor", Nama_sub_tes, "2PL.xlsx",sep=
 ```{r}
 ## Uji Menggunakan Model 3PL
 profil_tes_3PL <- mirt(data_mentah, 1, itemtype = '3PL')
+
+#profil_tes_3PL <- mirt(data_mentah, 1, itemtype = '3PL', technical = list(NCYCLES = 5000)) #Aktifkan baris kode ini jika iterasinya terterminate di 500.
+
+
 coef(profil_tes_3PL, simplify = TRUE)
 df_profil_tes_3P <- data.frame(coef(profil_tes_3PL, simplify = TRUE)) # Membuat dataframe untuk profil soal
 
