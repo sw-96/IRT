@@ -12,7 +12,7 @@ Program ini dibuat untuk menghasilkan output atau keluaran yang komprehensif, se
 - https://philippmasur.de/2022/05/13/how-to-run-irt-analyses-in-r/
 
 ## 2. Cara Penggunaan
-Pengaplikasiaan [mirt_based_IRT_program.Rmd](https://github.com/sw-96/IRT/blob/05f3a477a84f45ffcdd9ce7f95d57820b4f45c67/mirt_based_IRT_program.Rmd) dapat dilakukan dengan mengikuti langkah-langkah yang digambarkan pada [flowchart.png](https://github.com/sw-96/IRT/blob/05f3a477a84f45ffcdd9ce7f95d57820b4f45c67/flowchart.png).
+Pengaplikasiaan [mirt_based_IRT_program.Rmd](https://github.com/sw-96/IRT/blob/05f3a477a84f45ffcdd9ce7f95d57820b4f45c67/mirt_based_IRT_program.Rmd) dapat dilakukan dengan mengikuti langkah-langkah yang digambarkan pada [flowchart.png](https://github.com/sw-96/IRT/blob/05f3a477a84f45ffcdd9ce7f95d57820b4f45c67/flowchart.png) dan [IRT Guide.pdf](https://github.com/sw-96/IRT/blob/365a97592160088a6f8f18781ac8abe20703d54d/IRT%20Guide.pdf).
 
 ## 3. Data Jawaban Siswa
 Data jawaban yang dapat digunakan dalam simulasi analisis IRT tersedia pada file [full_dummy_data.xlsx](https://github.com/sw-96/IRT/blob/05f3a477a84f45ffcdd9ce7f95d57820b4f45c67/full_dummy_data.xlsx) (500 siswa) & [small_dummy_data](https://github.com/sw-96/IRT/blob/219f09a3aa2fdd2c39643b7e7fcd7534d51486d6/small_dummy_data.xlsx) (5 siswa).
