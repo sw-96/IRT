@@ -24,8 +24,8 @@ library(writexl)
 Nama_sub_tes <- "PM" #PU, PPU, PBM, PK, LBI, LBE, PM
 
 ## Transformasi skor siswa
-nilai_terbesar_baru <- 500 # bisa diatur sesuai kebutuhan
-nilai_terkecil_baru <- 100 # bisa diatur sesuai kebutuhan
+nilai_terbesar_baru <- 1000 # bisa diatur sesuai kebutuhan
+nilai_terkecil_baru <- 0 # bisa diatur sesuai kebutuhan
 
 
 delta_baru <- (nilai_terbesar_baru - nilai_terkecil_baru)
