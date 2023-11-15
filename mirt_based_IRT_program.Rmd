@@ -14,6 +14,8 @@ mulai <- Sys.time()
 
 ## Library
 library(mirt)
+library(stats4)
+library(lattice)
 library(ggmirt)
 library(psych)
 library(readxl)
