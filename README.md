@@ -1,3 +1,7 @@
+# Data_Preparation.R
+Program ini digunakan untuk menyiapkan data sebelum dianalisis menggunakan IRT. Penggunaan program ini dapat dilihat pada [dokumentasi_data_preparation_R](https://github.com/sw-96/IRT/blob/7e49df0c3790481a1efb7f2a8f123ca1ef603ff5/dokumentasi_data_preparation_R.pdf)
+
+
 # IRT
 Skrip kode untuk menghitung atau mengestimasi profil soal dan kemampuan peserta tes berdasarkan teori respon butir.
 
